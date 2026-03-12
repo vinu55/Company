@@ -3,25 +3,23 @@ import NavLinks from '../Navbar/NavLinks';
 import { HashLink } from 'react-router-hash-link';
 import logo from "../../images/logo.png";
 
-
-
-
-
 const NavBar = () => {
-    const [top, setTop] = useState(!window.scrollY);
-    const [isOpen, setisOpen] = React.useState(false);
-    function handleClick() {
-        setisOpen(!isOpen);
-    }
 
+  const [top, setTop] = useState(!window.scrollY);
+  const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-      const scrollHandler = () => {
-        window.pageYOffset > 10 ? setTop(false) : setTop(true)
-      };
-      window.addEventListener('scroll', scrollHandler);
-      return () => window.removeEventListener('scroll', scrollHandler);
-    }, [top]);
+  function handleClick() {
+    setIsOpen(!isOpen);
+  }
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      window.pageYOffset > 10 ? setTop(false) : setTop(true);
+    };
+
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
 
     return (
         <nav className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 ${!top && 'bg-white shadow-lg'}`}>
@@ -31,15 +29,15 @@ const NavBar = () => {
                         <img 
                             src={logo} 
                             alt="Innercircle Logo" 
-                            className="h-20 w-200 object-contain"
+                            className="h-20 w-auto object-contain"
                         />
-                        <h1 className="font-extrabold text-4xl text-blue-900"></h1>
+                        
                     </HashLink>
                     
                 </div>
                 <div className="group flex flex-col items-center">
                     <button className="p-2 rounded-lg lg:hidden text-blue-900" onClick={handleClick}>
-                        <svg className="h-600 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <svg className="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             {isOpen && (
                             <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
                             )}
