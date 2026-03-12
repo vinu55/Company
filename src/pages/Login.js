@@ -5,10 +5,10 @@ export default function Login() {
     <div
       style={{
         display: "flex",
-        justifyContent: "center",  // horizontal center
-        alignItems: "center",      // vertical center
-        height: "100vh",           // full viewport height
-        backgroundColor: "#f5f5f5" // optional light background
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        backgroundColor: "#f5f5f5"
       }}
     >
       <div style={{ minWidth: "320px", width: "100%", maxWidth: "400px" }}>

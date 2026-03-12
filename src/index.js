@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { ClerkProvider } from "@clerk/clerk-react";
 
-const clerkPubKey = "pk_test_aW5ub2NlbnQtaG91bmQtNDYuY2xlcmsuYWNjb3VudHMuZGV2JA";
+const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
